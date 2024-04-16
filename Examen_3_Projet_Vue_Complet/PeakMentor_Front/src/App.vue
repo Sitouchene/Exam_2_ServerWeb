@@ -16,7 +16,7 @@ const router = useRouter()
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <RouterLink class="navbar-brand" to="/">Peak Mentors</RouterLink>
+        <RouterLink class="navbar-brand" to="/home"><img src="/public/logo0.png" alt="Logo PeakMentor" width="100"> </RouterLink>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
           aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,28 +24,44 @@ const router = useRouter()
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <RouterLink class="nav-link active" aria-current="page" to="/">Home</RouterLink>
+              <RouterLink class="nav-link active" aria-current="page" to="/home">Home</RouterLink>
             </li>
             <li class="nav-item" v-if="loggedInUser?.id">
               <RouterLink class="nav-link" :to="`/profile/${loggedInUser?.id}`">Profile</RouterLink>
             </li>
             <li class="nav-item dropdown">
               <RouterLink class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"> Dropdown (si besoin)
+                data-bs-toggle="dropdown" aria-expanded="false"> Menus
               </RouterLink>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <RouterLink class="dropdown-item" to="#">Lien</RouterLink>
+                  <RouterLink class="dropdown-item" to="/tutors">Tutors</RouterLink>
                 </li>
                 <li>
-                  <RouterLink class="dropdown-item" to="#">Autre Lien</RouterLink>
+                  <RouterLink class="dropdown-item" to="/students">Students</RouterLink>
                 </li>
                 <li>
-                  <hr class="dropdown-divider">
+                  <RouterLink class="dropdown-item" to="/clients">Clients</RouterLink>
                 </li>
                 <li>
-                  <RouterLink class="dropdown-item" to="#">Lien encore</RouterLink>
+                  <RouterLink class="dropdown-item" to="/contracts">Contrats</RouterLink>
                 </li>
+                <li>
+                  <RouterLink class="dropdown-item" to="/trainings">Trainings</RouterLink>
+                </li>
+                <li>
+                  <RouterLink class="dropdown-item" to="/Groups">Groups</RouterLink>
+                </li>
+                
+                <li>
+                  <RouterLink class="dropdown-item" to="/Sessions">Sessions</RouterLink>
+                </li>
+                <li>
+                  <RouterLink class="dropdown-item" to="/about">A propos</RouterLink>
+                </li>
+
+
+
               </ul>
             </li>
           </ul>

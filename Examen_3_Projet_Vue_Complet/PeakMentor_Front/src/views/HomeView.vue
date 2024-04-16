@@ -5,9 +5,8 @@
       <nav>
         <ul>
           <li><router-link to="/users">Users</router-link></li>
-          <li><router-link to="/clients">Clients</router-link></li>
-          <li><router-link to="/employees">Employees</router-link></li>
           <li><router-link to="/tutors">Tutors</router-link></li>
+          <li><router-link to="/clients">Clients</router-link></li>          
           <li><router-link to="/students">Students</router-link></li>
           <li><router-link to="/groups">Groups</router-link></li>
           <li><router-link to="/contracts">Contracts</router-link></li>

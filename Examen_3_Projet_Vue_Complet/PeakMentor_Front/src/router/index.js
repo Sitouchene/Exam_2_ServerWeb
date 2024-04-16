@@ -13,7 +13,11 @@ import MajUser from '@/components/users/MajUser.vue'
 import ListeTutors from '@/components/tutors/ListeTutors.vue'
 import AjoutTutor from '@/components/tutors/AjoutTutor.vue'
 import MajTutor from '@/components/tutors/MajTutor.vue'
-/*
+
+// Imports pour l'entité Student
+import ListeStudents from '@/components/students/ListeStudents.vue'
+import AjoutStudent from '@/components/students/AjoutStudent.vue'
+import MajStudent from '@/components/students/MajStudent.vue'
 // Imports pour l'entité Contract
 import ListeContracts from '@/components/contracts/ListeContracts.vue'
 import AjoutContract from '@/components/contracts/AjoutContract.vue'
@@ -33,7 +37,7 @@ import MajSession from '@/components/sessions/MajSession.vue'
 import ListeTrainings from '@/components/trainings/ListeTrainings.vue'
 import AjoutTraining from '@/components/trainings/AjoutTraining.vue'
 import MajTraining from '@/components/trainings/MajTraining.vue'
-*/
+
 
 
 
@@ -121,7 +125,23 @@ const router = createRouter({
   name: 'update-tutor',
   component: MajTutor
 },
-/*
+// Routes pour l'entité Student
+{
+  path: '/students/',
+  name: 'students',
+  component: ListeStudents
+},
+{
+  path: '/add-student',
+  name: 'add-student',
+  component: AjoutStudent
+},
+{
+  path: '/update-student/:id',
+  name: 'update-student',
+  component: MajStudent
+},
+
 // Routes pour l'entité Contract
 {
   path: '/contracts/',
@@ -188,8 +208,8 @@ const router = createRouter({
   path: '/update-training/:id',
   name: 'update-training',
   component: MajTraining
-}*/
-    
+}
+  
     
   ]
 })
@@ -201,10 +221,12 @@ const routeOuvertes = [
   'login','about','home',
   'clients','add-client','update-client','profil',
   'users','add-user','update-user',
-  'tutors','add-tutor','update-tutor'
-
-
-
+  'tutors','add-tutor','update-tutor',
+  'students','add-student','update-student',
+  'contracts','add-contract','update-contract',
+  'groups','add-group','update-group',
+  'sessions','add-session','update-session',
+  'trainings','add-training','update-training'
 
 ]
 
