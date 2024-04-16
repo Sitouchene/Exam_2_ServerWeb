@@ -1,0 +1,30 @@
+peakMentorES02
+Application web developpé pour le suivi des mentors dans une ecole de formation du nom fictif PeakMentor L'idée est née du fait que j'enseigne Francais Seconde Langue pour des employés du gouvernement fédéral. J'ai constaté que la gestion des contrats, des tutors et des sessions laissent a desirer: des emails et des feuilles de temps sur excel.
+
+Le travail a commencé d'abord par la modélisation de cette application, certains aspects posent deja problemes.
+REGLES ET HYPOTHESES DE GESTIOB --> MODELE ENTITE ASSOCIATION
+
+Voici les regles et les hypotheses de gestion qui ont conduit au modele entite association:
+
+L'ecole signe des contrats avec des clients ( en general des ministeres ou des organismes du gouvernement federal)
+L'ecole recrute des tutors permanents/a terme/ a l'heure en fonction de ses besoins
+Un client (ministere) signe un contrat par formation
+L'ecole propose plusieurs formations (Francais niveau intermediaires, avance, management ...)
+Un contrat correspond a une formation et un groupe d'etudiants (1 ou plusieurs employes)
+c 'est deja dit: un groupe peut contenir un ou plusieurs etudiants
+Un contrat comprend les informations sur le nombre d'heures, le type de formation, le groupe concerné, la date de debut et la date de fin, le nombre d'heure et aussi le tarif horaire
+Pour realiser le contrat, des sessions sont crees (des seances) et un tutor est affectee a la seance
+Un tutor ou plusieurs peuvent intervenir dans le cadre d'un contrat. Mais un seul tutor pour une session Les entites identifiees sont: USER ROLE CLIENT STUDENT CONTRACT GROUP TRAINING TUTOR SESSION Les relations sont comme suit: (LIEN DU SCHEMA)
+MODELE ENTOTES ASSOCIATIONS https://lucid.app/lucidchart/96544221-ce9c-4831-bc23-9c7ad9ee2825/edit?invitationId=inv_43e3c94d-c58d-4efb-b72c-e073af9c0ab0 cf aussi fichier pdf: peakMentorES02_EntitesAssociations.pdf
+
+ERD https://lucid.app/lucidchart/4b7813dd-9cee-48fe-b150-a3205271510a/edit?invitationId=inv_80ebc74e-c356-4f9e-bf79-7d7c28c0269f Un jeu de donnees est generee de maniere aleatoire pour couvrir le maximum de situations, les noms et les organismes utilises sont des celebrites, des organismes publics, des noms d'auteurs de scientifique (une facon de leur rendre hommage ;-)).
+
+cf aussi fichier pdf: peakMentorES02_ERD.pdf
+
+LES ROLES Les roles: j'ai identifie les roles suivants: a) Administrator: Role de l'utilisateur root, il cree, il modifie et il supprime les autres utilisateurs!" b) Gestionnaire: Utilisateur interne metier de l'application, il gere les profils. Il cree/modifie/supprime les clients, les tutors, les apprenants, les groupes d'apprenants. Il cree aussi les planning et les fiches de seances et les valide egalement. Il peut y avoir 1 ou plusieurs user gestionnaires c) Financier: Utilisateur interne. Il s'occupe de la facturation des clients et de la paie des tutors sur la base des seances validees par le gestionnaire. d) Auditeur: Acces a toutes les donnees en lecture (que des requetes get) " e) Tutor: Correspond aux mentors ou enseignants. Le tutor accede aux fiches de seances qui le concernent et les met a jour, il peut egalement donner des evaluation sur les apprenants f) Client: Utilisateur exterene, il est lié avec l'ecole par un contrat de formation de ses employes (apprenants). Il a acces aux fiches de seances de ses apprenants, a leurs listes, aux atats de presences g) Apprenant: Correspond a un des emloyes du client qu'il desire de former. Un apprenant a acces a ses seances et plannings, il peut ajouter des commentaires et une evaluation des seances "
+
+REQUETES POSTMAN: Ci-apres le lien des requetes Postman:
+
+https://warped-firefly-666269.postman.co/workspace/JSONPlaceHolder~55dac7d2-267b-4bd3-b929-a4e906faa76f/collection/32257955-ca2e71da-989e-43a9-9e90-b79a7c312d12?action=share&creator=32257955
+
+fichier json: peakMentorES02.postman_collection.json
