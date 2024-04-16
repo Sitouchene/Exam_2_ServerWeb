@@ -1,16 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const roomController = require('./gestion-hotel-backend/controllers/roomController.js');
-const clientController = require('../controllers/clientController.js');
-const authMiddleware = require('../middleware/authMiddleware.js');
-const reservationController = require('../controllers/reservationController.js');
-const employeeController = require('../controllers/employeeController.js');
-const serviceController = require('../controllers/serviceController.js');
-const supplierController = require('../controllers/supplierController.js');
-const stockController = require('../controllers/stockController.js');
-const invoiceController = require('../controllers/invoiceController.js');
 
-router.use(authMiddleware.authenticateToken);
+
+
+
+const roomController = require('./gestion-hotel-backend/controllers/roomController.js');
+const clientController = require('./gestion-hotel-backend/controllers/clientController.js');
+const authMiddleware = require('./gestion-hotel-backend/middleware/authMiddleware.js');
+const reservationController = require('./gestion-hotel-backend/controllers/reservationController.js');
+const employeeController = require('./gestion-hotel-backend/controllers/employeeController.js');
+const serviceController = require('./gestion-hotel-backend/controllers/serviceController.js');
+const supplierController = require('./gestion-hotel-backend/controllers/supplierController.js');
+const stockController = require('./gestion-hotel-backend/controllers/stockController.js');
+const invoiceController = require('./gestion-hotel-backend/controllers/invoiceController.js');
+
+// router.use(authMiddleware.authenticateToken);
 router.get('/rooms', roomController.getAllRooms);
 router.get('/rooms/:id', roomController.getRoomById);
 router.post('/rooms', roomController.createRoom);
